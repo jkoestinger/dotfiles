@@ -1,0 +1,4 @@
+* {
+    /* font: "Iosevka 10"; */
+    font: "Hack Nerd Font Mono 10";
+}
