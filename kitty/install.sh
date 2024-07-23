@@ -1,3 +1,3 @@
 #!/bin/sh
 
-yay -S kitty
+yay -S kitty ttf-jetbrains-mono-nerd
