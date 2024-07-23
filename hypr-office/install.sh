@@ -13,4 +13,6 @@ yay -S \
     waybar \
     swww \
     blueman \
-    networkmanager
+    networkmanager \
+    dunst \
+    python-pywal
