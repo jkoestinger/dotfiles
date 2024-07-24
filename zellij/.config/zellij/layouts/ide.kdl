@@ -1,4 +1,4 @@
 layout {
-    pane command="nvim" borderless=true
+    pane borderless=true
     pane size="20%" split_direction="horizontal"
 }
