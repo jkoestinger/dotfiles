@@ -16,7 +16,6 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 blur_file="$HOME/.config/blur.sh"
 
 blur="50x30"
-blur=$(cat $blur_file)
 
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
