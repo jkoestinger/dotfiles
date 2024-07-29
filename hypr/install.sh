@@ -15,4 +15,5 @@ yay -S \
     blueman \
     networkmanager \
     dunst \
-    python-pywal
+    python-pywal \
+    hyprlock
