@@ -7,12 +7,14 @@ return {
     'nvim-treesitter/nvim-treesitter',
     -- adapters
     'jfpedroza/neotest-elixir',
+    'fredrikaverpil/neotest-golang',
   },
   config = function()
     local neotest = require 'neotest'
     neotest.setup {
       adapters = {
         require 'neotest-elixir' {},
+        require 'neotest-golang' {},
       },
     }
 
