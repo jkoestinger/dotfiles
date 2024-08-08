@@ -1,0 +1,7 @@
+{
+    "If Err": {
+        "prefix": ["iferr"],
+        "body": ["if err != nil {", "\treturn $1, err", "}"],
+        "description": "Return error if any"
+    }
+}
