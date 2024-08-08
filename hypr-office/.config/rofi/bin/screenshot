@@ -30,25 +30,25 @@ countdown () {
 
 # take shots
 shotnow () {
-	hyprshot -m output -m active --clipboard-only
+	hyprshot -m output -m active --raw --freeze --clipboard-only | swappy -f -
 }
 
 shot5 () {
 	countdown '3'
-	hyprshot -m output -m active --clipboard-only
+	hyprshot -m output -m active --clipboard-only --raw --freeze | swappy -f -
 }
 
 shot10 () {
 	countdown '10'
-	hyprshot -m output -m active --clipboard-only
+	hyprshot -m output -m active --clipboard-only --raw --freeze | swappy -f -
 }
 
 shotwin () {
-	hyprshot -m window --clipboard-only
+	hyprshot -m window --clipboard-only --raw --freeze | swappy -f -
 }
 
 shotarea () {
-	hyprshot -m region --clipboard-only
+	hyprshot -m region --clipboard-only --raw --freeze | swappy -f -
 }
 
 if [[ ! -d "$dir" ]]; then

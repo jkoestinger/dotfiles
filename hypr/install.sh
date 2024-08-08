@@ -16,4 +16,5 @@ yay -S \
     networkmanager \
     dunst \
     python-pywal \
-    hyprlock
+    hyprlock \
+    swappy
