@@ -17,4 +17,5 @@ yay -S \
     dunst \
     python-pywal \
     hyprlock \
-    swappy
+    swappy \
+    cliphist
