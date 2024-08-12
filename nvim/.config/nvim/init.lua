@@ -635,6 +635,7 @@ require('lazy').setup({
         settings = {},
       }
 
+      require('lspconfig').gleam.setup {}
       require('lspconfig').lexical.setup {
         filetypes = lexical_config.filetypes,
         cmd = lexical_config.cmd,
