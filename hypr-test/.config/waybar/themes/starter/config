@@ -33,7 +33,7 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
+        "custom/appmenuicon",
         "custom/settings",
         "custom/waybarthemes",
         "custom/wallpaper",
