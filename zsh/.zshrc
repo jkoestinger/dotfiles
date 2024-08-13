@@ -27,3 +27,10 @@ alias "vim=nvim"
 
 source ~/.zshrc_extra || true
 
+
+# bun completions
+[ -s "/home/justin/.bun/_bun" ] && source "/home/justin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
