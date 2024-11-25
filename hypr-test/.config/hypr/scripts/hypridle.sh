@@ -19,7 +19,9 @@ fi
 if [[ "$1" == "toggle" ]]; then
     if pgrep -x "$SERVICE" >/dev/null ;then
         killall hypridle
+        notify-send "Hypridle has been disabled"
     else
-        hypridle
+        nohup hypridle &
+        notify-send "Hypridle has been enabled"
     fi
 fi
