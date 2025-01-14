@@ -4,8 +4,8 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    provider = "claude",
-    auto_suggestions_provider = "claude",
+    provider = "mistral",
+    auto_suggestions_provider = "mistral",
     claude = {
       model = "claude-3-5-sonnet-20241022",
       temperature = 0,
@@ -13,6 +13,39 @@ return {
     },
     openai = {
       model = "gpt-4o"
+    },
+    vendors = {
+      ---@type AvanteProvider
+      mistral = {
+        endpoint = "https://codestral.mistral.ai/v1/chat/completions",
+        api_key_name = "MISTRAL_API_KEY",
+        model = "codestral-latest",
+        parse_curl_args = function(opts, code_opts)
+          local api_key = os.getenv(opts.api_key_name)
+          local Llm = require("avante.providers")
+
+          return {
+            url = opts.endpoint,
+            headers = {
+              ["Accept"] = "application/json",
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer " .. api_key,
+            },
+            body = {
+              model = opts.model,
+              messages = Llm.openai.parse_messages(code_opts),
+              temperature = 0.7,
+              max_tokens = 8192,
+              stream = true,
+              safe_prompt = false,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          local Llm = require("avante.providers")
+          Llm.openai.parse_response(data_stream, event_state, opts)
+        end,
+      }
     },
     behaviour = {
       auto_suggestions = false
