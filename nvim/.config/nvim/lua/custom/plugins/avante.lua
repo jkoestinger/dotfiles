@@ -5,7 +5,7 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = "mistral",
-    auto_suggestions_provider = "mistral",
+    auto_suggestions_provider = "deepseek",
     claude = {
       model = "claude-3-5-sonnet-20241022",
       temperature = 0,
@@ -15,6 +15,13 @@ return {
       model = "gpt-4o"
     },
     vendors = {
+      ---@type AvanteSupportedProvider
+      deepseek = {
+        __inherited_from = "openai",
+        endpoint = "https://api.deepseek.com",
+        api_key_name = "DEEPSEEK_API_KEY",
+        model = "deepseek-chat"
+      },
       ---@type AvanteProvider
       mistral = {
         endpoint = "https://codestral.mistral.ai/v1/chat/completions",
@@ -47,8 +54,15 @@ return {
         end,
       }
     },
+    dual_boost = {
+      enabled = false,
+      first_provider = "mistral",
+      second_provider = "deepseek",
+      prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
+      timeout = 60000
+    },
     behaviour = {
-      auto_suggestions = false
+      auto_suggestions = true
     },
     mappings = {
       diff = {
@@ -61,10 +75,10 @@ return {
         prev = "[x",
       },
       suggestion = {
-        accept = "<M-l>",
-        next = "<M-]>",
-        prev = "<M-[>",
-        dismiss = "<C-]>",
+        accept = "<C-S-y>",
+        next = "<C-S-j>",
+        prev = "<C-S-k>",
+        dismiss = "<C-S-h>",
       },
       jump = {
         next = "]]",
