@@ -20,7 +20,7 @@ return {
         adapter = 'deepseek',
       },
       inline = {
-        adapter = 'anthropic',
+        adapter = 'deepseek_chat',
       },
     },
     display = {
@@ -31,6 +31,17 @@ return {
         opts = { 'internal', 'filler', 'closeoff', 'algorithm:patience', 'followwrap', 'linematch:120' },
         provider = 'mini_diff',
       },
+    },
+    adapters = {
+      deepseek_chat = function()
+        return require('codecompanion.adapters').extend('deepseek', {
+          schema = {
+            model = {
+              default = 'deepseek-chat',
+            },
+          },
+        })
+      end,
     },
   },
 }
