@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cliphist list | rofi -dmenu -drun-display-format "{name}" -theme "$HOME"/.config/rofi/config/launcher.rasi | cliphist decode | wl-copy

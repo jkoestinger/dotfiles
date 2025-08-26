@@ -1,9 +1,0 @@
-layout {
-    pane {
-        name "Prod server"
-    }
-    pane {
-        name "Test server"
-        split_direction "horizontal"
-    }
-}

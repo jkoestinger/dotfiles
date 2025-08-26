@@ -1,4 +1,0 @@
-layout {
-    pane borderless=true
-    pane size="20%" split_direction="horizontal"
-}
