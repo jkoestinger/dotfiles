@@ -20,4 +20,4 @@
 
 nohup.out
 
-monitor.conf
+hypr/**/*.bak.*
