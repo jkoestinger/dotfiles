@@ -4,7 +4,7 @@ antidote load
 alias vim=nvim
 
 # opencode
-export PATH=/home/justin/.opencode/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.opencode/bin:$PATH
 
 if [ -f $HOME/.zshrc_extra ]; then
     source $HOME/.zshrc_extra
