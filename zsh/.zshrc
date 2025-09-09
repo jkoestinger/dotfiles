@@ -4,7 +4,7 @@ antidote load
 alias vim=nvim
 
 # opencode
-export PATH=$HOME/.local/bin:$HOME/.opencode/bin:$PATH
+export PATH=$HOME/.local/bin/synced:$HOME/.opencode/bin:$PATH
 
 export EDITOR=nvim
 
