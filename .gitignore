@@ -21,3 +21,5 @@
 nohup.out
 
 hypr/**/*.bak.*
+
+zsh/.local/bin/synced/.vscode/
