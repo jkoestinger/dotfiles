@@ -4,7 +4,7 @@ HYPR_LOCAL_PATH=$HOME/.config/hypr-local
 
 echo [*] Installing zsh...
 yay --needed --noconfirm -Sq zsh zsh-antidote lazyssh-bin hyprmon-bin
-sudo pacman --needed --noconfirm -Sq lazygit
+sudo pacman --needed --noconfirm -Sq lazygit ghostty
 sudo chsh -s /usr/bin/zsh $USER
 
 echo [*] Creating local hypr config files...
