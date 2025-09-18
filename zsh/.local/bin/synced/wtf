@@ -1,21 +1,21 @@
 #!/bin/bash
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "wtf - Shows what's running on a TCP port"
-    echo ""
-    echo "Usage: wtf [PORT]"
-    echo ""
-    echo "Shows processes listening on the specified TCP port."
-    echo "If no port is specified, defaults to port 3000."
-    echo ""
-    echo "Options:"
-    echo "  -h, --help    Show this help message"
-    echo ""
-    echo "Examples:"
-    echo "  wtf           # Show what's on port 3000"
-    echo "  wtf 8080      # Show what's on port 8080"
-    exit 0
+  echo "wtf - Shows what's running on a TCP port"
+  echo ""
+  echo "Usage: wtf [PORT]"
+  echo ""
+  echo "Shows processes listening on the specified TCP port."
+  echo "If no port is specified, defaults to port 3000."
+  echo ""
+  echo "Options:"
+  echo "  -h, --help    Show this help message"
+  echo ""
+  echo "Examples:"
+  echo "  wtf           # Show what's on port 3000"
+  echo "  wtf 8080      # Show what's on port 8080"
+  exit 0
 fi
 
 port="${1:-3000}"
-lsof -i "tcp:$port"
+sudo lsof -i "tcp:$port"
