@@ -24,5 +24,6 @@ echo [*] Installing configs...
 stow -S nvim
 stow -S hypr
 stow -S zsh
+stow -S ghostty
 
 echo [*] Done!
