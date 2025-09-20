@@ -24,3 +24,4 @@ hypr/**/*.bak.*
 
 zsh/.local/bin/synced/.vscode/
 zsh/.local/bin/local/
+tmux/.config/tmux/plugins/

@@ -1,29 +1,12 @@
 #!/bin/bash
 
-HYPR_LOCAL_PATH=$HOME/.config/hypr-local
+echo "[*] Starting local setup installtion..."
 
-echo [*] Installing zsh...
-yay --needed --noconfirm -Sq zsh zsh-antidote lazyssh-bin hyprmon-bin
-sudo pacman --needed --noconfirm -Sq lazygit ghostty
-sudo chsh -s /usr/bin/zsh $USER
+source ./scripts/01-install-packages.sh
+source ./scripts/02-setup-zsh.sh
+source ./scripts/03-setup-hypr.sh
+source ./scripts/04-setup-nvim.sh
+source ./scripts/05-setup-ghostty.sh
+source ./scripts/06-setup-tmux.sh
 
-echo [*] Creating local hypr config files...
-mkdir -p $HYPR_LOCAL_PATH
-touch $HYPR_LOCAL_PATH/autostart.conf
-touch $HYPR_LOCAL_PATH/bindings.conf
-touch $HYPR_LOCAL_PATH/envs.conf
-touch $HYPR_LOCAL_PATH/hypridle.conf
-touch $HYPR_LOCAL_PATH/hyprland.conf
-touch $HYPR_LOCAL_PATH/hyprlock.conf
-touch $HYPR_LOCAL_PATH/hyprsunset.conf
-touch $HYPR_LOCAL_PATH/input.conf
-touch $HYPR_LOCAL_PATH/monitors.conf
-touch $HYPR_LOCAL_PATH/windows.conf
-
-echo [*] Installing configs...
-stow -S nvim
-stow -S hypr
-stow -S zsh
-stow -S ghostty
-
-echo [*] Done!
+echo "[*] Done!"
