@@ -1,3 +1,20 @@
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+if command -v fzf &> /dev/null; then
+  if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+  fi
+  if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+  fi
+fi
+
+source ~/.local/share/omarchy/default/bash/functions
+source ~/.local/share/omarchy/default/bash/aliases
+
+
 source '/usr/share/zsh-antidote/antidote.zsh'
 antidote load
 
