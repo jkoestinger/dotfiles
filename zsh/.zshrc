@@ -31,3 +31,6 @@ export EDITOR=nvim
 if [ -f $HOME/.zshrc_extra ]; then
     source $HOME/.zshrc_extra
 fi
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
